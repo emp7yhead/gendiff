@@ -24,3 +24,4 @@ def generate_diff(file_path1, file_path2):
     
     result_sorted = {key: result[key] for key in sorted(result, key=lambda x: x[2])}
     return json.dumps(result_sorted, indent=2, sort_keys=False).replace('"', '')
+

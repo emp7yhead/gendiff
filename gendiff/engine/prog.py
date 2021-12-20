@@ -1,5 +1,7 @@
 import argparse
-from gendiff.generator.diff_generator import generate_diff
+
+from gendiff.program.diff_generator import generate_diff
+
 
 DESCRIPTION = 'Generate diff'
 FORMAT_FLAG_1 = '-f'
