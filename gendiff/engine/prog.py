@@ -1,8 +1,7 @@
 import argparse
+from gendiff.generator.diff_generator import generate_diff
 
 DESCRIPTION = 'Generate diff'
-FIRST_FILE_VAR = 'first_file'
-SECOND_FILE_VAR = 'second_file'
 FORMAT_FLAG_1 = '-f'
 FORMAT_FLAG_2 = '--format'
 FORMAT_HELP = 'set format of output'
@@ -10,8 +9,8 @@ FORMAT_HELP = 'set format of output'
 
 def parser():
     parser = argparse.ArgumentParser(description=DESCRIPTION)
-    parser.add_argument(FIRST_FILE_VAR)
-    parser.add_argument(SECOND_FILE_VAR)
+    parser.add_argument('first_file')
+    parser.add_argument('second_file')
     parser.add_argument(FORMAT_FLAG_1, FORMAT_FLAG_2, help=FORMAT_HELP)
     args = parser.parse_args()
-    print(args.echo)
+    print(generate_diff(args.first_file, args.second_file))

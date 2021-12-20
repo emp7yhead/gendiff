@@ -2,7 +2,7 @@ from gendiff.engine.prog import parser
 
 
 def main():
-    return parser()
+    parser()
 
 
 if __name__ == '__main__':

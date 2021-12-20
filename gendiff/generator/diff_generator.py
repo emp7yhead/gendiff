@@ -24,6 +24,3 @@ def generate_diff(file_path1, file_path2):
     
     result_sorted = {key: result[key] for key in sorted(result, key=lambda x: x[2])}
     return json.dumps(result_sorted, indent=2, sort_keys=False).replace('"', '')
-
-
-print(generate_diff('/home/empty/python/hexlet-project-2/python-project-lvl2/gendiff/file1.json', '/home/empty/python/hexlet-project-2/python-project-lvl2/gendiff/file2.json'))
