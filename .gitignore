@@ -4,3 +4,5 @@ dist/
 .venv/
 poetry.lock
 .pytest_cache/
+.coverage
+coverage.xml
