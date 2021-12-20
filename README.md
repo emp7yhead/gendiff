@@ -5,6 +5,7 @@ CLI utilite that shows difference between two JSON files
 
 ### Dependencies:
 - python = "^3.9"
+- pytest = "^6.2.5"
 
 ### Installation:
 ```
