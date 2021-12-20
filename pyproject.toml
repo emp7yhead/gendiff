@@ -9,6 +9,8 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.9"
 pytest = "^6.2.5"
+pytest-cov = "^3.0.0"
+pytest-reportlog = "^0.1.2"
 
 [tool.poetry.scripts]
 gendiff = "gendiff.scripts.gendiff:main"

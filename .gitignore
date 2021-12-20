@@ -3,4 +3,4 @@ dist/
 *.pyc
 .venv/
 poetry.lock
-*.json
+.pytest_cache/
