@@ -1,6 +1,5 @@
 import json
 import yaml
-from yaml.loader import Loader
 
 IN_FIRST = '- '
 IN_SECOND = '+ '
