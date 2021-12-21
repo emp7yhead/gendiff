@@ -6,6 +6,7 @@ CLI utilite that shows difference between two JSON files
 ### Dependencies:
 - python = "^3.9"
 - pytest = "^6.2.5"
+- PyYAML = "^6.0"
 
 ### Installation:
 ```
@@ -14,4 +15,10 @@ make package-install
 ```
 
 ### Work Process
+- JSON
+
 [![asciicast](https://asciinema.org/a/nuZbBzG5Xmbn4gVdiCg4gdR7l.svg)](https://asciinema.org/a/nuZbBzG5Xmbn4gVdiCg4gdR7l)
+
+- YAML
+
+[![asciicast](https://asciinema.org/a/7pKkiN4ZfeGYwUBGN2h0YGoEe.svg)](https://asciinema.org/a/7pKkiN4ZfeGYwUBGN2h0YGoEe)
