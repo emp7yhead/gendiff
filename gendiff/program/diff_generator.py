@@ -1,13 +1,23 @@
 import json
+import yaml
+from yaml.loader import Loader
 
 IN_FIRST = '- '
 IN_SECOND = '+ '
 BOTH = '  '
 
 
+def check_file_extension(file_path):
+    if file_path.endswith('.json'):
+        file = json.load(open(file_path))
+    if file_path.endswith(('.yml', '.yaml')):
+        file = yaml.safe_load(open(file_path))
+    return file
+
+
 def generate_diff(file_path1, file_path2):
-    first_file = json.load(open(file_path1))
-    second_file = json.load(open(file_path2))
+    first_file = check_file_extension(file_path1)
+    second_file = check_file_extension(file_path2)
     # create set of keys in files
     keys = first_file.keys() | second_file.keys()
     result = {}
