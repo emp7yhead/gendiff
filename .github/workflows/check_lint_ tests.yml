@@ -1,5 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-name: Check lint
+name: Check lint & tests
 on: push
 jobs:
  linter-check:   
@@ -21,3 +21,10 @@ jobs:
       - name: Run linter
         run: |
           make lint
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true
