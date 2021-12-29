@@ -65,21 +65,21 @@ def build_result(tree, depth=1):
             data.append(build_string(opening_indent,
                                      SYMBOL_DELETED,
                                      key,
-                                     build_value(value,
+                                     build_value(value[0],
                                                  depth + 1)))
 
         elif status == diff_creator.VALUE_ADDED:
             data.append(build_string(opening_indent,
                                      SYMBOL_ADDED,
                                      key,
-                                     build_value(value,
+                                     build_value(value[0],
                                                  depth + 1)))
 
         elif status == diff_creator.VALUE_UNCHANGED:
             data.append(build_string(opening_indent,
                                      SYMBOL_UNCHANGED,
                                      key,
-                                     build_value(value,
+                                     build_value(value[0],
                                                  depth + 1)))
 
         elif status == diff_creator.VALUE_CHILD:
