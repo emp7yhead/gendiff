@@ -33,9 +33,7 @@ def create_diff_segment(status, key, value1, value2=None, child=None):
 
 
 def create_diff(data1, data2):
-    data1_keys = data1.keys()
-    data2_keys = data2.keys()
-    keys = data1_keys | data2_keys
+    keys = data1.keys() | data2.keys()
     result = []
     for key in sorted(keys):
 
