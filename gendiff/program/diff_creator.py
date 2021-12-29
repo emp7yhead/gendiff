@@ -13,14 +13,14 @@ VALUE_CHILD = 'child'
 def parce_data(file_path):
     if file_path.endswith(TYPE_JSON):
         data = json.load(open(file_path))
-        
+
     if file_path.endswith(TYPE_YML_OR_YAML):
         data = yaml.safe_load(open(file_path))
 
     return data
 
 
-def create_diff_segment(status, key,  value1, value2=None, child=None):
+def create_diff_segment(status, key, value1, value2=None, child=None):
     collected_data = {
         'status': status,
         'key': key,
