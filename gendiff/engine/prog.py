@@ -9,7 +9,7 @@ FORMAT_FLAG_2 = '--format'
 FORMAT_HELP = 'set format of output'
 
 
-def parser():
+def parse_arguments():
     parser = argparse.ArgumentParser(description=DESCRIPTION)
     parser.add_argument('first_file')
     parser.add_argument('second_file')
