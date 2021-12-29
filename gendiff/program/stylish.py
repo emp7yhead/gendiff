@@ -48,7 +48,7 @@ def build_string(indent, symbol, key, value):
                                 value=value)
 
 
-def build_result(tree, depth=1):
+def build_stylish(tree, depth=1):
 
     data = []
     data.append('{')
@@ -86,8 +86,8 @@ def build_result(tree, depth=1):
             data.append(build_string(opening_indent,
                                      SYMBOL_UNCHANGED,
                                      key,
-                                     build_result(child,
-                                                  depth + 1)))
+                                     build_stylish(child,
+                                                   depth + 1)))
 
         else:
             data.append(build_string(opening_indent,

@@ -3,6 +3,7 @@ import yaml
 
 TYPE_JSON = '.json'
 TYPE_YML_OR_YAML = ('.yml', '.yaml')
+
 VALUE_DELETED = 'deleted'
 VALUE_ADDED = 'added'
 VALUE_CHANGED = 'changed'
