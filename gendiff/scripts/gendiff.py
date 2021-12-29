@@ -1,8 +1,8 @@
-from gendiff.engine.prog import parser
+from gendiff.engine.prog import parse_arguments
 
 
 def main():
-    parser()
+    parse_arguments()
 
 
 if __name__ == '__main__':
