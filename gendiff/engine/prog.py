@@ -1,5 +1,5 @@
 import argparse
-from gendiff.program.stylish import build_stylish
+from gendiff.formatter.stylish import build_stylish
 
 from gendiff.program.diff_generator import generate_diff
 
