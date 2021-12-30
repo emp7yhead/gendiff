@@ -102,3 +102,11 @@ def build_stylish(tree, depth=1):
                                                  depth + 1)))
     data.append(closing_indent + '}')
     return '\n'.join(data)
+
+
+def main():
+    build_stylish()
+
+
+if __name__ == '__main__':
+    main()
