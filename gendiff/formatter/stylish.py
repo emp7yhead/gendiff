@@ -14,7 +14,8 @@ def build_stylish(tree, depth=1):
 
     data = []
     data.append('{')
-    opening_indent, closing_indent = build_indent(depth)
+    opening_indent = INDENT_SYMBOL * (INDENT_COUNT * depth - 2)
+    closing_indent = INDENT_SYMBOL * (INDENT_COUNT * (depth - 1))
 
     for node in tree:
 
@@ -70,7 +71,8 @@ def build_stylish(tree, depth=1):
 def build_value(item, depth):
 
     template = []
-    opening_indent, closing_indent = build_indent(depth)
+    opening_indent = INDENT_SYMBOL * (INDENT_COUNT * depth - 2)
+    closing_indent = INDENT_SYMBOL * (INDENT_COUNT * (depth - 1))
 
     if isinstance(item, dict):
         template.append('{')
@@ -96,9 +98,3 @@ def build_string(indent, symbol, key, value):
                                 diff_symbol=symbol,
                                 key=key,
                                 value=value)
-
-
-def build_indent(depth):
-    opening_indent = INDENT_SYMBOL * (INDENT_COUNT * depth - 2)
-    closing_indent = INDENT_SYMBOL * (INDENT_COUNT * (depth - 1))
-    return opening_indent, closing_indent
