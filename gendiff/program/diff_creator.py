@@ -7,10 +7,10 @@ VALUE_CHILD = 'child'
 
 def create_diff(data1, data2):
     keys = data1.keys() | data2.keys()
-    result = []
+    diff = []
     for key in sorted(keys):
-        result.append(collect_data(key, data1, data2))
-    return result
+        diff.append(collect_data(key, data1, data2))
+    return diff
 
 
 def collect_data(key, data1, data2):

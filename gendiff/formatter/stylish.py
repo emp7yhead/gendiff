@@ -24,45 +24,44 @@ def build_stylish(tree, depth=1):
         child = diff_creator.get_child(node)
 
         if status == diff_creator.VALUE_DELETED:
-            string = build_string(opening_indent,
-                                  SYMBOL_DELETED,
-                                  key,
-                                  build_value(value[0],
-                                              depth + 1))
+            data.append(build_string(opening_indent,
+                                     SYMBOL_DELETED,
+                                     key,
+                                     build_value(value[0],
+                                                 depth + 1)))
 
         elif status == diff_creator.VALUE_ADDED:
-            string = build_string(opening_indent,
-                                  SYMBOL_ADDED,
-                                  key,
-                                  build_value(value[0],
-                                              depth + 1))
+            data.append(build_string(opening_indent,
+                                     SYMBOL_ADDED,
+                                     key,
+                                     build_value(value[0],
+                                                 depth + 1)))
 
         elif status == diff_creator.VALUE_UNCHANGED:
-            string = build_string(opening_indent,
-                                  SYMBOL_UNCHANGED,
-                                  key,
-                                  build_value(value[0],
-                                              depth + 1))
+            data.append(build_string(opening_indent,
+                                     SYMBOL_UNCHANGED,
+                                     key,
+                                     build_value(value[0],
+                                                 depth + 1)))
 
         elif status == diff_creator.VALUE_CHILD:
-            string = build_string(opening_indent,
-                                  SYMBOL_UNCHANGED,
-                                  key,
-                                  build_stylish(child,
-                                                depth + 1))
+            data.append(build_string(opening_indent,
+                                     SYMBOL_UNCHANGED,
+                                     key,
+                                     build_stylish(child,
+                                                   depth + 1)))
 
         else:
-            string_old = build_string(opening_indent,
-                                      SYMBOL_DELETED,
-                                      key,
-                                      build_value(value[0],
-                                                  depth + 1))
-            string = string_old + '\n' + build_string(opening_indent,
-                                                      SYMBOL_ADDED,
-                                                      key,
-                                                      build_value(value[1],
-                                                                  depth + 1))
-        data.append(string)
+            data.append(build_string(opening_indent,
+                                     SYMBOL_DELETED,
+                                     key,
+                                     build_value(value[0],
+                                                 depth + 1)))
+            data.append(build_string(opening_indent,
+                                     SYMBOL_ADDED,
+                                     key,
+                                     build_value(value[1],
+                                                 depth + 1)))
     data.append(closing_indent + '}')
     return '\n'.join(data)
 
