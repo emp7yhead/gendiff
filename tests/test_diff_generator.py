@@ -41,3 +41,11 @@ def test_generate_diff_format_error():
     nested_json2 = 'tests/fixtures/nested_2.json'
 
     generate_diff(nested_json1, nested_json2, 'changed')
+
+
+@pytest.mark.xfail(raises=NameError)
+def test_generate_diff_parce_error():
+    nested_json1 = 'tests/fixtures/nested_1.jpg'
+    nested_json2 = 'tests/fixtures/nested_2.json'
+
+    generate_diff(nested_json1, nested_json2)
