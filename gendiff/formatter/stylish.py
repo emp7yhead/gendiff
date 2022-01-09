@@ -19,7 +19,6 @@ def build_indent(depth):
 def build_value(item, depth):
 
     template = []
-
     opening_indent, closing_indent = build_indent(depth)
 
     if isinstance(item, dict):
@@ -102,11 +101,3 @@ def build_stylish(tree, depth=1):
                                                  depth + 1)))
     data.append(closing_indent + '}')
     return '\n'.join(data)
-
-
-def main():
-    build_stylish()
-
-
-if __name__ == '__main__':
-    main()
