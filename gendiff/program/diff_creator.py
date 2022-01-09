@@ -42,8 +42,8 @@ def create_diff_segment(status, key, value1, value2=None, child=None):
     collected_data = {
         'status': status,
         'key': key,
-        'value1': value1,
-        'value2': value2,
+        'value_old': value1,
+        'value_new': value2,
         'child': child
     }
     return collected_data
@@ -58,7 +58,7 @@ def get_key(collected_data):
 
 
 def get_value(collected_data):
-    value = (collected_data.get('value1'), collected_data.get('value2'))
+    value = (collected_data.get('value_old'), collected_data.get('value_new'))
     return value
 
 
