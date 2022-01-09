@@ -30,3 +30,7 @@ make package-install
 - Plain output:
 
 [![asciicast](https://asciinema.org/a/8B4UBx3UdWxhaTnnwLiqqg14a.svg)](https://asciinema.org/a/8B4UBx3UdWxhaTnnwLiqqg14a)
+
+- JSON output:
+
+[![asciicast](https://asciinema.org/a/Hj2e0cUpXz4FuOLlMTy1yibCx.svg)](https://asciinema.org/a/Hj2e0cUpXz4FuOLlMTy1yibCx)
