@@ -1,8 +1,6 @@
 import argparse
-from gendiff.formatter.stylish import build_stylish
 
-from gendiff.program.diff_generator import generate_diff
-
+from gendiff.program import diff_generator
 
 DESCRIPTION = 'Generate diff'
 FORMAT_FLAG_1 = '-f'
@@ -17,6 +15,8 @@ def parse_arguments():
     parser.add_argument(FORMAT_FLAG_1,
                         FORMAT_FLAG_2,
                         help=FORMAT_HELP,
-                        default=build_stylish)
+                        default=diff_generator.FORMAT_STYLISH)
     args = parser.parse_args()
-    print(generate_diff(args.first_file, args.second_file, args.format))
+    print(diff_generator.generate_diff(args.first_file,
+                                       args.second_file,
+                                       args.format))

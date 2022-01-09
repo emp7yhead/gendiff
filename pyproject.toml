@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.4.0"
+version = "0.5.1"
 description = "CLI utilite that make diff between two files"
 authors = ["emp7yhead <artyomkropp@gmail.com>"]
 packages = [
@@ -10,7 +10,6 @@ packages = [
 python = "^3.9"
 pytest = "^6.2.5"
 pytest-cov = "^3.0.0"
-pytest-reportlog = "^0.1.2"
 PyYAML = "^6.0"
 
 [tool.poetry.scripts]
