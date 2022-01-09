@@ -14,8 +14,8 @@ def build_stylish(tree, depth=1):
 
     data = []
     data.append('{')
-    opening_indent = INDENT_SYMBOL * (INDENT_COUNT * depth - 2)
-    closing_indent = INDENT_SYMBOL * (INDENT_COUNT * (depth - 1))
+    opening_indent = build_opening_indent(depth)
+    closing_indent = build_closing_indent(depth)
 
     for node in tree:
 
