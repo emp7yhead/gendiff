@@ -12,7 +12,7 @@ expected_format_plain_result = 'tests/fixtures/format_plain_result.txt'
 
 plain_diff = generate_diff(plain_yml3, plain_yml4)
 nested_diff = generate_diff(nested_json1, nested_json2)
-format_plain_diff = generate_diff(nested_json1, nested_json2, plain)
+format_plain_diff = generate_diff(nested_json1, nested_json2, 'plain')
 
 
 def test_generate_diff():
