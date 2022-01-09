@@ -35,6 +35,17 @@ def test_generate_diff_format_plain():
     assert format_plain_diff == open(expected_format_plain_result, 'r').read()
 
 
+def test_generate_diff_format_json():
+    expected_format_json_result = 'tests/fixtures/format_json_result.txt'
+
+    nested_json1 = 'tests/fixtures/nested_1.json'
+    nested_json2 = 'tests/fixtures/nested_2.json'
+
+    format_json_diff = generate_diff(nested_json1, nested_json2, 'json')
+
+    assert format_json_diff == open(expected_format_json_result, 'r').read()
+
+
 @pytest.mark.xfail(raises=NameError)
 def test_generate_diff_format_error():
     nested_json1 = 'tests/fixtures/nested_1.json'
