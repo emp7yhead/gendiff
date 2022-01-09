@@ -40,12 +40,11 @@ def build_string(template, path, value1, value2=None):
 
 def build_value(value):
     if isinstance(value, dict):
-        return TEMPLATE_COMPLEX_VALUE
+        value = TEMPLATE_COMPLEX_VALUE
     elif isinstance(value, bool):
-        return str(value).lower()
+        value = str(value).lower()
     elif isinstance(value, str):
-        return "'{}'".format(value)
+        value = "'{}'".format(value)
     elif value is None:
-        return 'null'
-    else:
-        return value
+        value = 'null'
+    return value
