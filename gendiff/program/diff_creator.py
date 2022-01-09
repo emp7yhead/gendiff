@@ -1,35 +1,8 @@
-import json
-import yaml
-
-TYPE_JSON = '.json'
-TYPE_YML_OR_YAML = ('.yml', '.yaml')
-
 VALUE_DELETED = 'deleted'
 VALUE_ADDED = 'added'
 VALUE_CHANGED = 'changed'
 VALUE_UNCHANGED = 'unchanged'
 VALUE_CHILD = 'child'
-
-
-def parce_data(file_path):
-    if file_path.endswith(TYPE_JSON):
-        data = json.load(open(file_path))
-
-    if file_path.endswith(TYPE_YML_OR_YAML):
-        data = yaml.safe_load(open(file_path))
-
-    return data
-
-
-def create_diff_segment(status, key, value1, value2=None, child=None):
-    collected_data = {
-        'status': status,
-        'key': key,
-        'value1': value1,
-        'value2': value2,
-        'child': child
-    }
-    return collected_data
 
 
 def create_diff(data1, data2):
@@ -63,6 +36,17 @@ def create_diff(data1, data2):
         result.append(collected_data)
 
     return result
+
+
+def create_diff_segment(status, key, value1, value2=None, child=None):
+    collected_data = {
+        'status': status,
+        'key': key,
+        'value1': value1,
+        'value2': value2,
+        'child': child
+    }
+    return collected_data
 
 
 def get_status(collected_data):

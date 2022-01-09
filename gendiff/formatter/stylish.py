@@ -10,43 +10,6 @@ SYMBOL_DELETED = '-'
 SYMBOL_UNCHANGED = ' '
 
 
-def build_indent(depth):
-    opening_indent = INDENT_SYMBOL * (INDENT_COUNT * depth - 2)
-    closing_indent = INDENT_SYMBOL * (INDENT_COUNT * (depth - 1))
-    return opening_indent, closing_indent
-
-
-def build_value(item, depth):
-
-    template = []
-    opening_indent, closing_indent = build_indent(depth)
-
-    if isinstance(item, dict):
-        template.append('{')
-        for key, value in item.items():
-            template.append(build_string(opening_indent,
-                                         SYMBOL_UNCHANGED,
-                                         key,
-                                         build_value(value,
-                                                     depth + 1)))
-        template.append(closing_indent + '}')
-    elif isinstance(item, bool):
-        template.append(str(item).lower())
-    elif item is None:
-        template.append('null')
-    else:
-        template.append(str(item))
-
-    return '\n'.join(template)
-
-
-def build_string(indent, symbol, key, value):
-    return TEMPLATE_FORM.format(indent=indent,
-                                diff_symbol=symbol,
-                                key=key,
-                                value=value)
-
-
 def build_stylish(tree, depth=1):
 
     data = []
@@ -101,3 +64,40 @@ def build_stylish(tree, depth=1):
                                                  depth + 1)))
     data.append(closing_indent + '}')
     return '\n'.join(data)
+
+
+def build_value(item, depth):
+
+    template = []
+    opening_indent, closing_indent = build_indent(depth)
+
+    if isinstance(item, dict):
+        template.append('{')
+        for key, value in item.items():
+            template.append(build_string(opening_indent,
+                                         SYMBOL_UNCHANGED,
+                                         key,
+                                         build_value(value,
+                                                     depth + 1)))
+        template.append(closing_indent + '}')
+    elif isinstance(item, bool):
+        template.append(str(item).lower())
+    elif item is None:
+        template.append('null')
+    else:
+        template.append(str(item))
+
+    return '\n'.join(template)
+
+
+def build_string(indent, symbol, key, value):
+    return TEMPLATE_FORM.format(indent=indent,
+                                diff_symbol=symbol,
+                                key=key,
+                                value=value)
+
+
+def build_indent(depth):
+    opening_indent = INDENT_SYMBOL * (INDENT_COUNT * depth - 2)
+    closing_indent = INDENT_SYMBOL * (INDENT_COUNT * (depth - 1))
+    return opening_indent, closing_indent

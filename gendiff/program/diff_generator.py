@@ -1,4 +1,5 @@
-from gendiff.program.diff_creator import parce_data, create_diff
+from gendiff.program.data_parcer import parce_data
+from gendiff.program.diff_creator import create_diff
 from gendiff.formatter.stylish import build_stylish
 from gendiff.formatter.plain import build_plain
 
