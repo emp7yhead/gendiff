@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "0.5.1"
+version = "0.6.0"
 description = "CLI utilite that make diff between two files"
 authors = ["emp7yhead <artyomkropp@gmail.com>"]
 packages = [
