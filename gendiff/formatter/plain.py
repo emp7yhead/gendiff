@@ -8,7 +8,7 @@ TEMPLATE_COMPLEX_VALUE = '[complex value]'
 
 
 def build_plain(tree, path=[]):
-    final_result = []
+    data = []
     for node in tree:
 
         status = diff_creator.get_status(node)
@@ -18,16 +18,16 @@ def build_plain(tree, path=[]):
         path.append(key)
 
         if status == diff_creator.VALUE_DELETED:
-            final_result.append(build_string(TEMPLATE_DELETED, path, value[0]))
+            data.append(build_string(TEMPLATE_DELETED, path, value[0]))
         elif status == diff_creator.VALUE_ADDED:
-            final_result.append(build_string(TEMPLATE_ADDED, path, value[0]))
+            data.append(build_string(TEMPLATE_ADDED, path, value[0]))
         elif status == diff_creator.VALUE_CHILD:
-            final_result.append(build_plain(child, path))
+            data.append(build_plain(child, path))
         elif status == diff_creator.VALUE_CHANGED:
-            final_result.append(build_string(TEMPLATE_CHANGED, path, value[0],
-                                             value[1]))
+            data.append(build_string(TEMPLATE_CHANGED, path, value[0],
+                                     value[1]))
         path.pop()
-    return '\n'.join(final_result)
+    return '\n'.join(data)
 
 
 def build_string(template, path, value1, value2=None):
