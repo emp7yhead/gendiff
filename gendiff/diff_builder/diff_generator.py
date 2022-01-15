@@ -1,5 +1,5 @@
-from gendiff.program.data_parser import parse_data
-from gendiff.program.diff_creator import create_diff
+from gendiff.diff_builder.data_parser import parse_data
+from gendiff.diff_builder.diff_creator import create_diff
 from gendiff.formatter.stylish import build_stylish
 from gendiff.formatter.plain import build_plain
 from gendiff.formatter.json import build_json
@@ -11,7 +11,7 @@ FORMAT_JSON = 'json'
 FORMAT_ERROR = 'Please choose valid format.'
 
 
-def get_diff(file_path1, file_path2):
+def get_data(file_path1, file_path2):
     data1 = parse_data(file_path1)
     data2 = parse_data(file_path2)
     diff = create_diff(data1, data2)
@@ -30,6 +30,6 @@ def render_diff(diff, style):
 
 
 def generate_diff(file_path1, file_path2, style=FORMAT_STYLISH):
-    diff = get_diff(file_path1, file_path2)
+    diff = get_data(file_path1, file_path2)
     rendered_diff = render_diff(diff, style)
     return rendered_diff
