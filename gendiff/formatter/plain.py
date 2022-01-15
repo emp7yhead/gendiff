@@ -1,4 +1,4 @@
-from gendiff.program import diff_creator
+from gendiff.diff_builder import diff_creator
 
 TEMPLATE_ADDED = "Property '{path}' was added with value: {value}"
 TEMPLATE_DELETED = "Property '{path}' was removed"

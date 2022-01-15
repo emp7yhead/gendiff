@@ -1,6 +1,6 @@
 import argparse
 
-from gendiff.program import diff_generator
+from gendiff.diff_builder import diff_generator
 
 DESCRIPTION = 'Generate diff'
 FORMAT_FLAG_1 = '-f'

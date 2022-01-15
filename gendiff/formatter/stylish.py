@@ -1,4 +1,4 @@
-from gendiff.program import diff_creator
+from gendiff.diff_builder import diff_creator
 
 INDENT_COUNT = 4
 INDENT_SYMBOL = ' '
