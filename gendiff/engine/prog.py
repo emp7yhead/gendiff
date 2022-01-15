@@ -17,7 +17,4 @@ def parse_arguments():
     parser.add_argument('first_file')
     parser.add_argument('second_file')
     args = parser.parse_args()
-    diff = diff_generator.generate_diff(args.first_file,
-                                        args.second_file,
-                                        args.format)
-    print(diff)
+    return args.first_file, args.second_file, args.format
