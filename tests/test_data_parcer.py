@@ -10,8 +10,7 @@ from gendiff.diff_builder import data_parser
         ('python.json', '.json'),
         ('python.yml', ('.yml', '.yaml')),
         pytest.param(
-            'strange.psd', '.psd', marks=pytest.mark.xfail
-            )
+            'strange.psd', '.psd', marks=pytest.mark.xfail)
     ]
 )
 def test_get_data_extension(file_name, expected):
