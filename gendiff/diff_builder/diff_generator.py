@@ -11,13 +11,6 @@ FORMAT_JSON = 'json'
 FORMAT_ERROR = 'Please choose valid format.'
 
 
-def get_data(file_path1, file_path2):
-    data1 = parse_data(file_path1)
-    data2 = parse_data(file_path2)
-    diff = create_diff(data1, data2)
-    return diff
-
-
 def render_diff(diff, style):
     if style == FORMAT_STYLISH:
         return build_stylish(diff)
@@ -30,6 +23,7 @@ def render_diff(diff, style):
 
 
 def generate_diff(file_path1, file_path2, style=FORMAT_STYLISH):
-    diff = get_data(file_path1, file_path2)
-    rendered_diff = render_diff(diff, style)
-    return rendered_diff
+    data1 = parse_data(file_path1)
+    data2 = parse_data(file_path2)
+    diff = create_diff(data1, data2)
+    return render_diff(diff, style)
