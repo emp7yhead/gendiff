@@ -1,3 +1,4 @@
+from gendiff.diff_builder.data_loader import get_file_data
 from gendiff.diff_builder.data_parser import parse_data
 from gendiff.diff_builder.diff_creator import create_diff
 from gendiff.formatter.stylish import build_stylish
@@ -23,7 +24,11 @@ def render_diff(diff, style):
 
 
 def generate_diff(file_path1, file_path2, style=FORMAT_STYLISH):
-    data1 = parse_data(file_path1)
-    data2 = parse_data(file_path2)
-    diff = create_diff(data1, data2)
+    data1, extension1 = get_file_data(file_path1)
+    data2, extension2 = get_file_data(file_path2)
+
+    parsed_data1 = parse_data(data1, extension1)
+    parsed_data2 = parse_data(data2, extension2)
+
+    diff = create_diff(parsed_data1, parsed_data2)
     return render_diff(diff, style)
