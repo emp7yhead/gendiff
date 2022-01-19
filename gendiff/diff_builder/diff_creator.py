@@ -9,11 +9,11 @@ def create_diff(data1, data2):
     keys = data1.keys() | data2.keys()
     diff = []
     for key in sorted(keys):
-        diff.append(collect_data(key, data1, data2))
+        diff.append(collect_diff_segments(key, data1, data2))
     return diff
 
 
-def collect_data(key, data1, data2):
+def collect_diff_segments(key, data1, data2):
     if key not in data1:
         collected_data = create_diff_segment(VALUE_ADDED,
                                              key,
