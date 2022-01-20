@@ -7,7 +7,7 @@ TEST_TEMPLATE = [
     pytest.param('tests/fixtures/nested_1.psd',
                  '.psd',
                  marks=pytest.mark.xfail)
-    ]
+]
 
 
 @pytest.mark.parametrize('test_case, expected_result', TEST_TEMPLATE)
