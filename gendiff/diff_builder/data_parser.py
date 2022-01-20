@@ -11,7 +11,7 @@ def parse_data(file_data, file_extension):
 
 
 def get_data_json(file_path):
-    parced_data = json.load(file_path)
+    parced_data = json.loads(file_path)
     return parced_data
 
 
