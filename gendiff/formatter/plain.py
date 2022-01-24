@@ -11,19 +11,19 @@ def build_plain(tree, path=[]):
     data = []
     for node in tree:
 
-        status = diff_creator.get_status(node)
+        type = diff_creator.get_type(node)
         key = diff_creator.get_key(node)
         value = diff_creator.get_value(node)
         child = diff_creator.get_child(node)
         path.append(key)
 
-        if status == diff_creator.VALUE_DELETED:
+        if type == diff_creator.VALUE_DELETED:
             data.append(build_string(TEMPLATE_DELETED, path, value[0]))
-        elif status == diff_creator.VALUE_ADDED:
+        elif type == diff_creator.VALUE_ADDED:
             data.append(build_string(TEMPLATE_ADDED, path, value[0]))
-        elif status == diff_creator.VALUE_CHILD:
+        elif type == diff_creator.VALUE_CHILD:
             data.append(build_plain(child, path))
-        elif status == diff_creator.VALUE_CHANGED:
+        elif type == diff_creator.VALUE_CHANGED:
             data.append(build_string(TEMPLATE_CHANGED, path, value[0],
                                      value[1]))
         path.pop()

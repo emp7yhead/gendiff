@@ -1,47 +1,47 @@
 [
     {
-        "status": "child",
+        "type": "child",
         "key": "common",
         "value_old": null,
         "value_new": null,
         "child": [
             {
-                "status": "added",
+                "type": "added",
                 "key": "follow",
                 "value_old": false,
                 "value_new": null,
                 "child": null
             },
             {
-                "status": "unchanged",
+                "type": "unchanged",
                 "key": "setting1",
                 "value_old": "Value 1",
                 "value_new": null,
                 "child": null
             },
             {
-                "status": "deleted",
+                "type": "deleted",
                 "key": "setting2",
                 "value_old": 200,
                 "value_new": null,
                 "child": null
             },
             {
-                "status": "changed",
+                "type": "changed",
                 "key": "setting3",
                 "value_old": true,
                 "value_new": null,
                 "child": null
             },
             {
-                "status": "added",
+                "type": "added",
                 "key": "setting4",
                 "value_old": "blah blah",
                 "value_new": null,
                 "child": null
             },
             {
-                "status": "added",
+                "type": "added",
                 "key": "setting5",
                 "value_old": {
                     "key5": "value5"
@@ -50,19 +50,19 @@
                 "child": null
             },
             {
-                "status": "child",
+                "type": "child",
                 "key": "setting6",
                 "value_old": null,
                 "value_new": null,
                 "child": [
                     {
-                        "status": "child",
+                        "type": "child",
                         "key": "doge",
                         "value_old": null,
                         "value_new": null,
                         "child": [
                             {
-                                "status": "changed",
+                                "type": "changed",
                                 "key": "wow",
                                 "value_old": "",
                                 "value_new": "so much",
@@ -71,14 +71,14 @@
                         ]
                     },
                     {
-                        "status": "unchanged",
+                        "type": "unchanged",
                         "key": "key",
                         "value_old": "value",
                         "value_new": null,
                         "child": null
                     },
                     {
-                        "status": "added",
+                        "type": "added",
                         "key": "ops",
                         "value_old": "vops",
                         "value_new": null,
@@ -89,27 +89,27 @@
         ]
     },
     {
-        "status": "child",
+        "type": "child",
         "key": "group1",
         "value_old": null,
         "value_new": null,
         "child": [
             {
-                "status": "changed",
+                "type": "changed",
                 "key": "baz",
                 "value_old": "bas",
                 "value_new": "bars",
                 "child": null
             },
             {
-                "status": "unchanged",
+                "type": "unchanged",
                 "key": "foo",
                 "value_old": "bar",
                 "value_new": null,
                 "child": null
             },
             {
-                "status": "changed",
+                "type": "changed",
                 "key": "nest",
                 "value_old": {
                     "key": "value"
@@ -120,7 +120,7 @@
         ]
     },
     {
-        "status": "deleted",
+        "type": "deleted",
         "key": "group2",
         "value_old": {
             "abc": 12345,
@@ -132,7 +132,7 @@
         "child": null
     },
     {
-        "status": "added",
+        "type": "added",
         "key": "group3",
         "value_old": {
             "deep": {

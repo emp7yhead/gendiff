@@ -20,33 +20,33 @@ def build_stylish(tree, depth=1):
 
     for node in tree:
 
-        status = diff_creator.get_status(node)
+        type = diff_creator.get_type(node)
         key = diff_creator.get_key(node)
         value = diff_creator.get_value(node)
         child = diff_creator.get_child(node)
 
-        if status == diff_creator.VALUE_DELETED:
+        if type == diff_creator.VALUE_DELETED:
             string = build_string(opening_indent,
                                   SYMBOL_DELETED,
                                   key,
                                   build_value(value[0],
                                               depth + 1))
 
-        elif status == diff_creator.VALUE_ADDED:
+        elif type == diff_creator.VALUE_ADDED:
             string = build_string(opening_indent,
                                   SYMBOL_ADDED,
                                   key,
                                   build_value(value[0],
                                               depth + 1))
 
-        elif status == diff_creator.VALUE_UNCHANGED:
+        elif type == diff_creator.VALUE_UNCHANGED:
             string = build_string(opening_indent,
                                   SYMBOL_UNCHANGED,
                                   key,
                                   build_value(value[0],
                                               depth + 1))
 
-        elif status == diff_creator.VALUE_CHILD:
+        elif type == diff_creator.VALUE_CHILD:
             string = build_string(opening_indent,
                                   SYMBOL_UNCHANGED,
                                   key,
