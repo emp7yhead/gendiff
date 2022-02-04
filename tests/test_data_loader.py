@@ -15,7 +15,7 @@ TEST_TEMPLATE = [
         'tests/fixtures/nested1.psd',
         '.psd',
         marks=pytest.mark.xfail,
-        ),
+    ),
 ]
 
 
